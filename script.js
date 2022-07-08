@@ -23,6 +23,10 @@ function checkGuess() {
     setGameOver();
   } else if (guessCount === 10) {
     lastResult.textContent = '!!!GAME OVER!!!';
+    let resultParas = document.querySelector('.resultParas');
+    let answerDisplay = document.createElement('p');
+    answerDisplay.textContent = 'The correct answer was ' + randomNumber;
+    resultParas.appendChild(answerDisplay);
     setGameOver();
   } else {
     lastResult.textContent = 'Wrong!';
